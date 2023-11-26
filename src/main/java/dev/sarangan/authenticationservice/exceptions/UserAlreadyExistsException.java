@@ -1,2 +1,7 @@
-package dev.sarangan.authenticationservice.exceptions;public class UserAlreadyExistsException {
+package dev.sarangan.authenticationservice.exceptions;
+
+public class UserAlreadyExistsException extends Exception {
+    public UserAlreadyExistsException(String message) {
+        super(message);
+    }
 }
