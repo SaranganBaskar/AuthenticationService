@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -48,7 +49,7 @@ class SessionRepositoryTest {
 
     @Test
     void findSessionByToken() {
-        Session session = sessionRepository.findSessionByUser_IdAndToken(1L,"iaNTFUHrOgJSN8R7ix41");
+        Optional<Session> session = sessionRepository.findByUser_IdAndToken(1L,"iaNTFUHrOgJSN8R7ix41");
         assertThat(session)
                 .isNotNull();
 
