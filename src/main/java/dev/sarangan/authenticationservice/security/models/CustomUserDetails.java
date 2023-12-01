@@ -19,10 +19,11 @@ public class CustomUserDetails implements UserDetails {
     private String username;
     private String password;
     private List<GrantedAuthority> authorities;
-    private boolean isAccountNonExpired;
-    private boolean isAccountNonLocked;
-    private boolean isCredentialsNonExpired;
-    private boolean isEnabled;
+    private boolean accountNonExpired;
+    private boolean accountNonLocked;
+    private boolean credentialsNonExpired;
+    private boolean enabled;
+    private Long userId;
 
 
     public CustomUserDetails(User user) {
@@ -33,10 +34,11 @@ public class CustomUserDetails implements UserDetails {
 
         this.password = user.getPassword();
         this.username = user.getEmail();
-        this.isAccountNonExpired = true;
-        this.isAccountNonLocked = true;
-        this.isCredentialsNonExpired = true;
-        this.isEnabled = true;
+        this.accountNonExpired = true;
+        this.accountNonLocked = true;
+        this.credentialsNonExpired = true;
+        this.enabled = true;
+        this.userId = user.getId();
     }
 
     @Override
@@ -63,21 +65,29 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public boolean isAccountNonExpired() {
 
-        return isAccountNonExpired;
+        return this.accountNonExpired;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return isAccountNonLocked;
+        return this.accountNonLocked;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return isCredentialsNonExpired;
+        return this.credentialsNonExpired;
     }
 
     @Override
     public boolean isEnabled() {
-        return isEnabled;
+        return this.enabled;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }

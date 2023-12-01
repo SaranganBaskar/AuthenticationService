@@ -7,6 +7,7 @@ import dev.sarangan.authenticationservice.models.Session;
 import dev.sarangan.authenticationservice.models.SessionStatus;
 import dev.sarangan.authenticationservice.models.User;
 import dev.sarangan.authenticationservice.services.AuthService;
+import jakarta.annotation.security.PermitAll;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,7 @@ public class AuthController {
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
+
 
     @PostMapping("/signup")
     public ResponseEntity<UserDto> signUp(@RequestBody SignUpRequestDto signUpRequestDto) throws UserAlreadyExistsException {
