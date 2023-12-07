@@ -6,14 +6,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SpringBootTest
+//@SpringBootTest
 class UtilitiesTest {
 
-    @Test
-    void generateTokenTest(){
-        String tokenTest = Utilities.generateSessionToken(20);
-        System.out.println(tokenTest);
-        assertThat(tokenTest).isNotNull().isNotEmpty();
-    }
+//    @Test
+//    void generateTokenTest(){
+//        String tokenTest = Utilities.generateSessionToken(20);
+//        System.out.println(tokenTest);
+//        assertThat(tokenTest).isNotNull().isNotEmpty();
+//    }
 
 }

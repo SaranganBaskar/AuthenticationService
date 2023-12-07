@@ -15,13 +15,13 @@ import org.springframework.test.annotation.Commit;
 
 import java.util.UUID;
 
-@SpringBootTest
+//@SpringBootTest
 public class InsertRegisteredClientTest {
 
-    @Autowired
+//    @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
+//    @Autowired
     private JpaRegisteredClientRepository jpaRegisteredClientRepository;
 
 //    @Test
